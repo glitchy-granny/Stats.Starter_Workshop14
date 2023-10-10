@@ -38,12 +38,9 @@ console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
  */
 function getLength(numbers) {
     // TODO
-
-    const numbers = [1, 2, 3, 4, 5];
-
     return numbers.length;
-    console.log(`You have given ${getLength(numbers)} numbers.`);
 };
+console.log(`You have given ${getLength(numbers)} numbers.`);
 
 /**
  * @param {number[]} numbers an array of integers
@@ -51,12 +48,13 @@ function getLength(numbers) {
  */
 function getSum(numbers) {
     // TODO
-
+    let sum = 0;
     for (let i = 0; i < numbers.length; i++) {
-        getSum += numbers[i];
+        sum += numbers[i];
     }
-    console.log(`The sum of your numbers is ${getSum(numbers)}.`);
+    return sum;
 }
+console.log(`The sum of your numbers is ${getSum(numbers)}.`);
 
 
 /**
@@ -65,10 +63,11 @@ function getSum(numbers) {
  */
 function getMean(numbers) {
     // TODO
-
-    return getSum / numbers.length;
-    console.log(`The mean of your numbers is ${getMean(numbers)}.`);
+    const sum = getSum(numbers)
+    return sum / numbers.length;
 }
+
+console.log(`The mean of your numbers is ${getMean(numbers)}.`);
 
 /**
  * @param {number[]} numbers an array of integers
@@ -76,10 +75,9 @@ function getMean(numbers) {
  */
 function getMin(numbers) {
     // TODO
-
     return (Math.min(numbers));
-    console.log(`The smallest of your numbers is ${getMin(numbers)}.`);
 }
+console.log(`The smallest of your numbers is ${getMin(numbers)}.`);
 
 /**
  * @param {number[]} numbers an array of integers
@@ -87,11 +85,10 @@ function getMin(numbers) {
  */
 function getMax(numbers) {
     // TODO
-
     return (Math.max(numbers));
-    console.log('the max of your array is ${numbers.length-1}');
-
 }
+
+console.log('the max of your array is ${numbers.length-1}');
 
 /**
  * @param {number[]} numbers an array of integers
@@ -99,13 +96,14 @@ function getMax(numbers) {
  */
 function getRange(numbers) {
     // TODO
-    if (numbers.length) return null;
+    if (!numbers.length) return null;
     let maxVal = Math.max(...numbers);
     let minVal = Math.min(...numbers);
 
-    return maxVal - minVal;
-    console.log(`The range of your numbers is ${getRange(numbers)}.`);
+    return getRange;
+
 }
+console.log(`The range of your numbers is ${getRange(numbers)}.`);
 
 /**
  * @param {number[]} numbers an array of integers
@@ -113,9 +111,14 @@ function getRange(numbers) {
  */
 function getEvens(numbers) {
     // TODO
-
-
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 == 0) {
+            numbers.push(numbers[i]);
+        }
+    }
+    return getEvens;
 }
+console.log(`The even numbers you gave are ${getEvens(numbers)}.`);
 
 /**
  * @param {number[]} numbers an array of integers
@@ -123,6 +126,11 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
     // TODO
-
-
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 !== 0) {
+            numbers.push(numbers[i]);
+        }
+        return getOdds;
+    }
 }
+console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
